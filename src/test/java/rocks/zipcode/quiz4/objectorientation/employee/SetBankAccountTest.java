@@ -27,16 +27,7 @@ public class SetBankAccountTest {
 
     @Test
     public void test2() {
-//        test(10.0);
-        // given
-        Employee employee = new Employee();
-        BankAccount expected = new BankAccount();
-
-        // when
-        BankAccount actual = employee.getBankAccount();
-
-        // then
-        Assert.assertEquals(expected, actual);
+        test(10.0);
     }
 
 

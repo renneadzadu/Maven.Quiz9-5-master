@@ -10,30 +10,31 @@ import java.util.List;
  * void setBalance(Double double)
  */
 public class BankAccount extends Account implements Transactable{
-    protected Double balance;
+    protected double balance;
 
-    public BankAccount() {
-
-    }
-
-    public BankAccount(Long id,Double balance) {
-        super(id);
-        this.balance = balance;
-    }
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        balance = balance + amountToIncreaseBy;
+       balance = balance + amountToIncreaseBy;
+         //balance += amountToIncreaseBy;
+        throw new IllegalArgumentException();
 
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-        balance = balance - amountToDecreaseBy;
+        if (amountToDecreaseBy>=0&&amountToDecreaseBy<balance) {
+            balance = balance - amountToDecreaseBy;
+        }
+        else {
+            throw new IllegalArgumentException();
+
+        }
     }
 
 
     public Double getBalance() {
+
         return balance;
     }
 

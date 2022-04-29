@@ -6,38 +6,35 @@ import java.util.List;
 /**
  * @author leon on 27/12/2018.
  */
-public class Bank extends BankAccount{
-    private BankAccount bankAccount;
-    List<BankAccount> accounts = new ArrayList<>();
+public class Bank {
+    List<BankAccount> accounts;
 
 
     public Bank(){
+       this.accounts = new ArrayList<>();
 
     }
 
-    public Bank(Long id, Double balance,BankAccount bankAccount ) {
-        super(id, balance);
-        this.bankAccount = bankAccount;
-    }
+//    public Bank(BankAccount bankAccount, List<BankAccount> accounts) {
+//        this.bankAccount = bankAccount;
+//        this.accounts = accounts;
+//    }
 
+    public void removeBankAccountByIndex(Integer indexNumber) {
+        int x = (int) indexNumber;
+        accounts.remove(x);
+//        accounts.remove((int)indexNumber);
 
-    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-
-        return null;
     }
 
     public void addBankAccount(BankAccount bankAccount) {
+        accounts.add(bankAccount);
+
     }
 
     public Boolean containsBankAccount(BankAccount bankAccount) {
-        throw new UnsupportedOperationException("Method not yet implemented");
+        return accounts.contains(bankAccount);
+
     }
 
-    public BankAccount getBankAccount() {
-        return bankAccount;
-    }
-
-    public void setBankAccount(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
 }
