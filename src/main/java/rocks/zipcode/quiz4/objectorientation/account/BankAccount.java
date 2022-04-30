@@ -15,8 +15,10 @@ public class BankAccount extends Account implements Transactable{
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-       balance = balance + amountToIncreaseBy;
-         //balance += amountToIncreaseBy;
+       //balance = balance + amountToIncreaseBy;
+         if (amountToIncreaseBy<=0){
+             balance += amountToIncreaseBy;
+         }
         throw new IllegalArgumentException();
 
     }
